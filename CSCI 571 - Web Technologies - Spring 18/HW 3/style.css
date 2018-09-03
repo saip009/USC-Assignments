@@ -1,0 +1,342 @@
+body{
+	font-family: sans-serif;
+	width: 1060px;
+	margin: 0px;
+	padding: 0px;
+	color: #454545;
+}
+
+
+.pagecontainer {
+	overflow: hidden;
+}
+
+
+.top {
+	position: relative;
+	height: 220px;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+
+.address {
+	position: relative;
+	top: 30px;
+	left: 111px;
+}
+
+
+.thyme {
+	position: relative;
+	font-size: 48px;
+	text-align: center;
+	width: 100%;
+	top: 60px;
+	letter-spacing: 5px;
+	color: #BD9C58;
+	/*font-weight: 400;*/
+}
+
+
+.navbar {
+	position: absolute;
+	width: 100%;
+	border-top: 1px rgb(205,205,205,0.6) solid;
+	bottom: 0px;
+	height: 40px;
+	font-size: 14px;
+}
+
+
+.navbar ul{
+	list-style-type: none;
+	overflow: hidden;
+	margin: 0;
+	padding-top: 15px;  /*change as per .navbar height*/
+	width: 88%;
+}
+
+
+.navbar li {
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+
+
+.navbar a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.active {
+	color: #BD9C58;
+}
+
+
+div.topparallax {
+	background-image: url("http://cs-server.usc.edu:45678/hw/hw3/images/image6.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	overflow: hidden;
+}
+
+.topparallax {
+	background-size: auto 1060px;
+	background-position: -335px 62px;
+	height: 580px;
+}
+
+
+
+
+/*ss 2*/
+
+.mid1 {
+	/*margin: 0 auto;*/
+	padding: 0;
+	padding-top: 2%;
+	width: 100%;
+	/*background-color: black;*/
+	/*height: 1000px;*/
+	overflow:hidden;
+	height:1%;
+}
+
+.midleft {
+/*	float: left;
+	width: 40%;
+	padding-top: 20%;
+	margin-left: 6%;*/
+
+	margin-top:10%;
+	float: left;
+	width: 38%;
+	margin-left: 10%;
+
+	/*background-color: red;*/
+	overflow:hidden;
+	height:1%;
+}
+
+.midright {
+	float: right;/*
+	width: 40%;
+	padding-top: 12%;
+	margin-right: 7%;*/
+
+	margin-top: 2%;
+	float: right;
+	width: 38%;
+	margin-right: 10%;
+
+	/*background-color: blue;*/
+	overflow:hidden;
+	height:1%;
+}
+
+
+.girlspic img {
+	width: 100%;
+}
+
+
+.purpletpic img {
+	width: 100%;
+	padding-top: 70px;
+}
+
+
+.greenpic img {
+	width: 100%;
+	padding-top: 40px;
+}
+
+
+.saladpic img {
+	width: 100%;
+	padding-top: 40px;
+}
+
+
+.midtext {
+	font-size: 15px;
+}
+
+.midbottomtext {
+	padding-bottom: 70px;
+}
+
+.ourrest {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	padding-bottom: 7px;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.goldtext {
+	font-family: 'Libre Baskerville Italic', arial;
+	font-style: italic;
+	font-weight: 500;
+	color: #BD9C58;
+}
+
+
+.freshest {
+	font-size: 36px;
+	padding-top: 45px;
+	line-height: 45px;
+}
+
+
+.text {
+	color: #4f4f4f;
+	font-size: 13px;
+	margin-top: 12px;
+	font-family: Sans-Serif;
+	line-height: 18px;
+	letter-spacing: 0.5px;
+}
+
+
+.local {
+	font-size: 36px;
+	line-height: 45px;
+}
+
+.readmore {
+	text-decoration: none;
+	color: black;
+	/*padding-bottom: 10px;*/
+	margin-top: 13px;
+	font-size: 14px;
+	line-height: 45px;
+	font-weight: 500;
+	-webkit-transition: color 1s; 
+    transition: color 1s;
+}
+
+a.readmore:hover {
+	color: #D3D3D3;
+}
+
+
+/*screenshot3*/
+
+
+.mid2 {
+	width: 80%;
+	margin: auto;
+	/*background-color: green;*/
+}
+
+
+.image7andbox {
+	position:relative;
+}
+
+
+.choppingpic img{
+	width: 100%;
+}
+
+
+.whitebox {
+	position: absolute;
+	/*top: 45%;*/
+	/*left: 45%;*/
+	background-color: white;
+	text-align: center;
+	top: 210px;
+	width: 42%;
+	height: 84px;
+	margin-left: 29%;
+	padding-top: 5%;
+	font-size: 13px;
+}
+
+
+.greens {
+	text-align: center;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+
+.order {
+	text-align: center;
+	font-size: 27px;
+	font-weight: 500;
+	margin-top: 2%;
+	color:black;
+	text-decoration: none;
+}
+
+a.order {
+	color: #4f4f4f;
+	-webkit-transition: color 1s; 
+    transition: color 1s;
+}
+
+
+a.order:hover {
+	color: #D3D3D3;
+}
+
+
+/*screenshot 4*/
+
+
+.moretext {
+	margin-top: 5%;
+	text-align: center;
+}
+
+.gogreen {
+	font-size: 12px;
+}
+
+.lovedit {
+	font-size: 30px;
+	padding-top: 10px;
+}
+
+
+.bottomparallax {
+	background-image: url(http://cs-server.usc.edu:45678/hw/hw3/images/image5.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: auto auto;
+	background-position: 0px -170px;
+	/*width: 100%;*/
+	height: 450px;
+	margin-top: 6%;
+	opacity: 0.8;
+}
+
+.footertext {
+	background-color: #BE9E56;
+	color: #ffffff;
+	padding-top: 3%;
+	height: 110px;
+	padding-right: 16%;
+	font-size: 12px;
+	font-weight: 600;
+	font-family: "arial";
+}
+
+.copyright {
+	padding-left: 74%;
+	/*width: 212px;*/
+}
+
+.footerlink {
+	padding-left: 74%;
+	/*width: 212px;*/
+}
+
+
+
+

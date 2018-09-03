@@ -1,0 +1,30 @@
+{
+  "name": "stock-search",
+  "version": "1.0.0",
+  "description": "A Stock Search Responsive Application",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://aayushkh@bitbucket.org/aayushkh/stocksearch.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stock",
+    "search"
+  ],
+  "author": "Aayush Khanna",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "highcharts": "^6.0.2",
+    "request": "^2.83.0",
+    "xml2js": "^0.4.19"
+  },
+  "engines": {
+    "node": "~6"
+  }
+}

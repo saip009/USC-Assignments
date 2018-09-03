@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        
+        <title>Homework 4</title>
+        
+        <style type="text/css">
+            
+            .main {
+                position: relative;
+                top: 100px;
+                height: 300px;
+                width: 300px;
+                margin: auto;
+            }
+
+            .main .maintext {
+                font-weight: bold;
+                font-size: 20px;
+            }
+
+            .main .urlinput {
+                width: 200px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        
+        <div class="main">
+            <p class="maintext">Enter URL for JSON file</p>
+            <!-- form -->
+            <form name="myform" method="POST" id="location">
+              <input type="text" id= "urlip" name="URL" maxlength="255" size="50" required>
+              <br />
+              <br />
+              <input type="submit" id='submit' name="submit" value="Submit Query" onClick="myFunction(this.form)" />
+            </form>
+            <!-- for test -->
+            <p id="errors"></p>
+            <p id="test"></p>
+
+        </div>
+
+        <script>
+
+            var htmlCode = ""  // html code
+
+            // CODE FOR MAKING HTML CODE
+
+            function makehtml(jsonDoc){
+                var test = "test";
+                // window.alert(test);
+                var isEmpty = JSON.stringify(jsonDoc);
+                // window.alert(isEmpty);
+                var isNotError = true;
+                if (isEmpty==JSON.stringify({})){          // check empty file
+                     // window.alert("Empty JSON file!")
+                     throw "EmptyFile";
+                     isNotError = false;
+                }else{
+                    if(typeof(jsonDoc.Mainline.Table.Row)==='undefined'){
+                        // handle empty data headers etc
+                        // console.log('Check')
+                        throw 'DataDisplayError';
+                        isNotError = false;
+                    } else {
+
+                    // html code start
+                    htmlCode += "<HTML> <HEAD class='head'> <meta content='text/html;charset=utf-8' http-equiv='Content-Type'> <TITLE> OUTPUT TABLE </TITLE></HEAD><BODY> <CENTER>";
+                    htmlCode += "<TABLE BORDER='2' WIDTH=100%> <tr>";               
+                    var outputheader = jsonDoc.Mainline.Table.Header.Data;  // get headers
+                    var outputheaderIterate = Object.keys(outputheader);    
+                    for( var i in outputheaderIterate){
+                    // console.log('Check')
+                        fileheaders = outputheader[i];
+                     // console.log('Check')
+                        htmlCode+="<th>"+fileheaders+"</th>"
+                    }
+                    htmlCode+="</tr>";
+                    }
+                }
+                              
+                var fileData = jsonDoc.Mainline.Table.Row;
+                var lenfile = fileData.length; 
+                // iter file
+                for(i=0;i<lenfile;i++) {
+                    // console.log('Check')
+                    var data = fileData[i];
+                    htmlCode+="<tr >";
+                    var filekeys = Object.keys(data);
+                    // iter keys
+                    for (var filekeysindex in filekeys){
+                        var j = filekeysindex;
+                        dataindex = filekeys[j];
+                        // window.alert(test)
+
+                        if(dataindex === "Logo"){
+                            if (data[dataindex]) {
+                                htmlCode+= "<td class='tdD'> <img src='"+ data[dataindex]+" 'height ='180' width='270' alt=' '> </td>";
+                            } else {
+                                htmlCode+= "<td> </td>";
+                            }
+                        }else if(dataindex === "Hubs"){
+                            var hubs = data[dataindex];
+                            var hubkeys = Object.keys(hubs);
+                            // window.alert(test)
+                            htmlCode+="<td><ul>";
+                            for(var indexhubkeys in hubkeys){
+                                var k = indexhubkeys
+                             // window.alert(test)
+                                var strings = "strings"
+                                for(var hub_index in hubs[hubkeys[k]]) {
+                                    if (k === "0") {
+                                        if ( hub_index === "0") {
+                                            htmlCode+= "<li><b>"+ hubs[hubkeys[k]][hub_index] +"</b></li>";
+                                        } else {
+                                        htmlCode+= "<li>"+ hubs[hubkeys[k]][hub_index] +"</li>";
+                                        }
+                                    }
+                                }
+                            }
+                            htmlCode+="</ul></td>";
+                            
+                        }else if(dataindex === "HomePage"){
+                            htmlCode+= "<td> <a href='"+ data[dataindex]+"'/> "+ data[dataindex]+" </td>";
+                        }  else{
+                            htmlCode+= "<td>"+data[dataindex]+"</td>";
+                        }
+                    } 
+                    htmlCode+="</tr>";
+                }
+                htmlCode+="</table></center><noscript></body></html>";
+                return isNotError;
+            }
+            
+            // END OF HTML GENERATION
+            
+            function myFunction(thisform){
+                // var htmlCode="";
+                try {
+                var URL = thisform.URL.value;
+                if(URL.trim().length == 0)  throw BlankURLError;
+                else {
+                function loadJSON(url){
+                    if(window.XMLHttpRequest){
+                        xmlhttp = new XMLHttpRequest();
+                    }else{
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    xmlhttp.open("GET",url,false);
+                    xmlhttp.send();
+                    if (xmlhttp.status==0){
+                        usefulResponse = xmlhttp.responseText;
+                        // window.alert(test)
+                        jsonDoc = JSON.parse(usefulResponse);
+                        return jsonDoc;
+                    }else if (xmlhttp.status==200){
+                        usefulResponse = xmlhttp.responseText;
+                        // window.alert(test)
+                        jsonDoc = JSON.parse(usefulResponse);
+                        return jsonDoc;
+                    }else{
+                        throw 'FileExistsError';
+                    }
+                    
+                }
+                jsonDoc = loadJSON(URL);
+                if  (window.ActiveXObject)
+                {       
+                    if  (jsonObj.parseError.errorCode !=0)  
+                    {
+                        newwindowstuff = window.open("", "Error");
+                // console.log('Check')
+                        newwindowstuff.document.write(htmlCode);
+                     }  else
+                     {      
+                    // console.log('Check')
+                         makehtmljson = makehtml(jsonDoc);  
+                         var check = 'check';
+                         if(makehtmljson){
+                         newwindowstuff = window.open("", "HW4", "fullscreen=yes", '_blank');
+                         newwindowstuff.document.write(htmlCode);   }   
+                    }   
+               }else
+               {        
+                    // console.log('Check')
+                   jsonDoc.onload=makehtml(jsonDoc);
+                   onloadjson = jsonDoc.onload;
+                   if (onloadjson){
+                   newwindowstuff = window.open("", "HW4", "fullscreen=yes", '_blank');
+                   newwindowstuff.document.write(htmlCode);     }
+                }
+                    newwindowstuff.document.close();     
+            }
+        } catch (err){
+            if(err.name == 'NetworkError'){
+               console.log('There was a network error.'); 
+               window.alert("Please Check File Name")  // network error
+            } else if (err = "EmptyFile") { 
+                // window.alert(test)
+               console.log('There was a empty file error.');
+                window.alert("JSON File is Empty");
+            } else if ( err = 'BlankURLError') {
+               console.log('There was file name error.');
+                window.alert('Please Enter File Name')
+            } else if (err = 'DataDisplayError'){
+               console.log('There was a network error.');
+                window.alert("No data to display!");
+            } else if (err = 'FileExistsError') {
+                // console.log('Check')
+                window.alert("File doesn't exist. Please try again.");
+            }
+            
+            else{
+               console.log('There was a network error.');
+               window.alert("Please Enter a Valid JSON File.")
+            }
+        }
+
+        // END OF CATCH  
+
+        }
+
+        // END OF myfunction
+
+        // END OF JS
+           
+         </script>
+    </body>
+
+</html>

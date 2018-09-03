@@ -1,0 +1,332 @@
+*, body, html {
+	margin: 0;
+	padding: 0;	
+}
+
+
+.form-div {
+	width: 60%;
+	margin: auto;
+	margin-top: 30px;
+	background-color: #F8F8F8;
+}
+
+.travel-text {
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 21px;
+}
+
+form {
+	width: 50%;
+	margin: auto;
+	padding-bottom: 20px;
+}
+
+.below-form {
+	width: 60%;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.result-fav-tabs {
+	/*width: 50px;*/
+	margin: auto;
+}
+
+
+.required-field::after {
+    content: "*";
+    color: red;
+}
+
+.search-table-parent {
+	width: 75%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.details-button {
+	margin-bottom: 10px;
+	align-self:right; 
+	text-align: right;
+}
+
+.details-button button {
+	position: relative;
+
+}
+
+/* FOR STAR FAVORITE */
+
+.click {
+	font-size: 33px;
+	color: rgba(0,0,0,.5);
+	width: 30px;
+	height: 30px;
+	margin: 0;
+	position: relative;
+	cursor: pointer;
+}
+
+.click #fav {
+	/*margin-left: 4px;*/
+	z-index: 999;
+	position: absolute;
+	left: 3px;
+	top:2px;
+}
+
+#fav:hover {
+	opacity: 0.8;
+}
+
+#fav:active {
+	transform: scale(0.93,0.93) translateY(2px)
+}
+
+.active #fav {
+	color: #F5CC27 !important;
+}
+
+* {
+	transition: all .32s ease;
+}
+
+.right-arrow {
+	z-index: 999;
+	position: absolute;
+	left: 5px;
+	top: 2px;
+}
+
+.next-prev {
+	margin-top: 10px;
+}
+
+/*  */
+
+
+.details-page {
+	width: 75%;
+	margin: auto;
+}
+
+
+#myTab {
+	margin-bottom: 10px;
+}
+
+
+#open-hours-link {
+	text-decoration: underline;
+	padding-left: 10px;
+}
+
+
+.photo-tile {
+	margin-right: 5px;
+	margin-bottom: 10px;
+	border: 1px solid lightgrey;
+	width: 100%;
+}
+
+.photo-tile img{
+	max-width: 95%;
+	min-width: 95%;
+	padding: 5px;
+	margin: auto;
+}
+
+.photos-tab-content {
+	margin-top: 10px;
+	overflow: auto;
+	padding: 5px;
+}
+
+
+/*  GRID   */
+
+.grid-column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.grid-row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.grid-column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+@media screen and (max-width: 800px) {
+    .grid-column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .grid-column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.place-name {
+	margin-top: 20px;
+}
+
+.reviews-content {
+	margin-bottom: 20px;
+}
+
+.review-container {
+	margin: 10px;
+	padding: 10px;
+	font-size: 15px;
+}
+
+#profile-pic {
+	/*margin-left: 5px;*/
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.date {
+	color: grey;
+}
+
+.orange-star {
+	color: orange;
+}
+
+
+/* PARTIAL STAR */
+
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 22px;
+  height: 25px;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+  float: right;
+}
+  
+.star-ratings-css-top {
+    color: orange;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: -5px;
+    left: 0;
+    overflow: hidden;
+
+}
+
+
+.rating-value {
+	width: 30px;
+	margin-left: 15px;
+}
+
+.list-some-buttons {
+	margin-bottom: 15px;
+}
+
+.list-button {
+	padding-bottom: 5px;
+}
+
+.list-text {
+	font-size: 16px;
+}
+
+
+.map-tab-content {
+	margin-bottom: 15px;
+}
+
+.map-input {
+	margin-bottom: 10px;
+}
+
+.pegman-map-icons {
+	margin-bottom: 10px;
+}
+
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map-thing, #street-view {
+    height: 500px;
+}
+
+#street-view {
+	display: none;
+}
+
+
+/*        */
+
+.details-nav {
+	min-height: 500px;
+}
+
+
+#map-icon {
+	display: none;
+}
+
+.no-results-table-search {
+	display: none;
+}
+
+#prev-btn {
+	display: none;
+}
+
+#next-btn {
+	display: none;
+}
+
+/*#no-photos-table {
+	display: none;
+}*/
+
+
+.details-page {
+	display: none;
+}
+
+.search-table-parent {
+	display: none;
+}
+
+
+input:required {
+    box-shadow:none;
+}
+
+#nogooglereview {
+	display: none;
+}
+
+
+#noyelpreview {
+	display: none;
+}
+
